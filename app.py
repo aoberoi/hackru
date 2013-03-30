@@ -7,6 +7,10 @@ app = Flask(__name__)
 def hello():
     return 'Hello TokBox!'
 
+@app.route('/hackru')
+def hello():
+    return 'Hello HackRU!'
+
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
