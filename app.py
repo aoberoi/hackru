@@ -26,7 +26,8 @@ def list():
 
 @app.route('/opentok')
 def test():
-  return render_template('opentok.html', s=session.session_id)
+  token = opentok_sdk.generate_token(session.session_id)
+  return render_template('opentok.html', s=session.session_id, t=token)
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
